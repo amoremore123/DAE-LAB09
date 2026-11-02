@@ -1,5 +1,5 @@
-import Button from "../Button/Button.jsx";
-export default function Hero({ movie }) {
+import MovieSearch from "../MovieSearch/MovieSearch.jsx";
+export default function Hero({ movie, searchText, onSearchChange }) {
   return (
     <section className="hero" id="featured">
       <div className="hero-copy">
@@ -18,9 +18,7 @@ export default function Hero({ movie }) {
           <span>{movie.classification}</span>
           <span>★ {movie.rating.toFixed(1)}</span>
         </div>
-        <Button as="a" href="#movies">
-          Explorar cartelera <span>↗</span>
-        </Button>
+        <MovieSearch value={searchText} onChange={onSearchChange} />
       </div>
       <div className="hero-art">
         <img src={movie.image} alt={`Ilustración de ${movie.title}`} />

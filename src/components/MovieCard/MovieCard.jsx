@@ -1,5 +1,9 @@
 import Button from "../Button/Button.jsx";
-export default function MovieCard({ movie, isFavorite = false, onToggleFavorite }) {
+export default function MovieCard({
+  movie,
+  isFavorite = false,
+  onToggleFavorite,
+}) {
   return (
     <article className="movie-card">
       <div className="poster">
@@ -21,7 +25,15 @@ export default function MovieCard({ movie, isFavorite = false, onToggleFavorite 
           <span key={time}>{time}</span>
         ))}
       </div>
-      <Button variant={isFavorite ? "favorite" : "secondary"} className="favorite-button" aria-pressed={isFavorite} aria-label={`${isFavorite ? "Quitar" : "Agregar"} ${movie.title} ${isFavorite ? "de" : "a"} favoritas`} onClick={() => onToggleFavorite(movie.id)}>{isFavorite ? "♥ Guardada" : "♡ Guardar favorita"}</Button>
+      <Button
+        variant={isFavorite ? "favorite" : "secondary"}
+        className="favorite-button"
+        aria-pressed={isFavorite}
+        aria-label={`${isFavorite ? "Quitar" : "Agregar"} ${movie.title} ${isFavorite ? "de" : "a"} favoritas`}
+        onClick={() => onToggleFavorite(movie.id)}
+      >
+        {isFavorite ? "♥ Guardada" : "♡ Guardar favorita"}
+      </Button>
     </article>
   );
 }

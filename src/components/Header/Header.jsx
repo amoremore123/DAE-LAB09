@@ -10,7 +10,9 @@ export default function Header({ favoritesCount = 0 }) {
         <a href="#featured">Destacada</a>
         <a href="#contact">Contacto</a>
       </nav>
-      <span className="location" aria-live="polite">♥ {favoritesCount} favoritas · Lima, Perú</span>
+      <span className="location" aria-live="polite">
+        ♥ {favoritesCount} favoritas · Lima, Perú
+      </span>
     </header>
   );
 }
