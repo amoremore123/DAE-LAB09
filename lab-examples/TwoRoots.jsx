@@ -1,0 +1,1 @@
+export default function TwoRoots() { return (<h1>Primero</h1><p>Segundo</p>) }

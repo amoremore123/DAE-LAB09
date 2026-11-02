@@ -1,16 +1,24 @@
-# React + Vite
+# DAE LAB09 — Cine Aura
+Alumna: Amore Salcedo Macedo.
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Cartelera ficticia creada con React y Vite. Ocho películas con imagen SVG local, sinopsis, clasificación, valoración y horarios.
 
-Currently, two official plugins are available:
+## Ejecutar
+```sh
+npm ci
+npm run dev -- --host 127.0.0.1 --port 5179
+```
+## Verificar
+```sh
+npm run build
+npm run lint
+```
+## Componentes
+App compone Header, Hero, MovieList y Footer. Hero recibe movie; MovieList recibe movies y crea MovieCard mediante map y key. Cada componente tiene su propia carpeta.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Datos: src/data/movies.js. CSS: src/styles/tokens.css, base.css y components.css importados desde index.css. La guía no incluye otro esquema CSS detallado; se separaron variables, base y componentes.
 
-## React Compiler
+## Pruebas de errores
+Los ejemplos aislados en lab-examples reproducen los tres errores solicitados sin romper la aplicación principal. No forman parte de la compilación final. Ver lab-examples/README.md.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Los afiches son ilustraciones vectoriales originales y las películas y el contacto son ficticios para esta práctica.
