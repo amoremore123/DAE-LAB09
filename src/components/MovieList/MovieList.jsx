@@ -1,5 +1,22 @@
-import MovieCard from '../MovieCard/MovieCard.jsx'
+import MovieCard from "../MovieCard/MovieCard.jsx";
 
 export default function MovieList({ movies }) {
-  return <section className="movies-section" id="movies"><div className="section-heading"><div><p className="eyebrow">ENCUENTRA TU PRÓXIMA HISTORIA</p><h2>Hoy en cartelera<span>.</span></h2></div><span>{movies.length} películas · Todos los géneros</span></div><div className="movie-grid">{movies.map(movie => <MovieCard key={movie.id} movie={movie} />)}</div></section>
+  return (
+    <section className="movies-section" id="movies">
+      <div className="section-heading">
+        <div>
+          <p className="eyebrow">ENCUENTRA TU PRÓXIMA HISTORIA</p>
+          <h2>
+            Hoy en cartelera<span>.</span>
+          </h2>
+        </div>
+        <span>{movies.length} películas · Todos los géneros</span>
+      </div>
+      <div className="movie-grid">
+        {movies.map((movie) => (
+          <MovieCard key={movie.id} movie={movie} />
+        ))}
+      </div>
+    </section>
+  );
 }
