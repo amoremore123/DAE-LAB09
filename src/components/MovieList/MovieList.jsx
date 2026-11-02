@@ -17,7 +17,7 @@ export default function MovieList({
             Hoy en cartelera<span>.</span>
           </h2>
         </div>
-        <span>{filteredMovies.length} películas · Todos los géneros</span>
+        <span>{filteredMovies.length} {filteredMovies.length === 1 ? "película" : "películas"} · Todos los géneros</span>
       </div>
       {filteredMovies.length === 0 ? (
         <div className="empty-state" role="status">
