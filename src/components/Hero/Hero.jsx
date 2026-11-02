@@ -1,3 +1,4 @@
+import Button from "../Button/Button.jsx";
 export default function Hero({ movie }) {
   return (
     <section className="hero" id="featured">
@@ -17,9 +18,9 @@ export default function Hero({ movie }) {
           <span>{movie.classification}</span>
           <span>★ {movie.rating.toFixed(1)}</span>
         </div>
-        <a className="primary-button" href="#movies">
+        <Button as="a" href="#movies">
           Explorar cartelera <span>↗</span>
-        </a>
+        </Button>
       </div>
       <div className="hero-art">
         <img src={movie.image} alt={`Ilustración de ${movie.title}`} />
