@@ -1,0 +1,3 @@
+PASS: 8 movies with unique ids and complete fields.
+PASS: 8 local posters exist.
+PASS: App renders 8 MovieCard components, showtimes, Header and Footer.
