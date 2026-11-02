@@ -1,3 +1,4 @@
+import { useMemo } from "react";
 import { filterMovies } from "../../utils/search.js";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 
@@ -7,7 +8,7 @@ export default function MovieList({
   searchText = "",
   onToggleFavorite,
 }) {
-  const filteredMovies = filterMovies(movies, searchText);
+  const filteredMovies = useMemo(() => filterMovies(movies, searchText), [movies, searchText]);
   return (
     <section className="movies-section" id="movies">
       <div className="section-heading">
