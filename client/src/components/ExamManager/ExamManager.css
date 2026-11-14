@@ -1,0 +1,29 @@
+.exam-manager {
+  max-width: 1150px;
+  margin: 2rem auto;
+  padding: 1.5rem;
+  background: #171b26;
+  color: #f8fafc;
+  border-radius: 12px;
+}
+.exam-manager button, .exam-manager input {
+  padding: .5rem .75rem;
+  border: 1px solid #697991;
+  border-radius: 5px;
+}
+.exam-manager button { background: #263a54; color: white; cursor: pointer; }
+.exam-manager button:disabled { opacity: .6; cursor: default; }
+.exam-manager form { display: grid; gap: .75rem; max-width: 36rem; }
+.exam-actions { display: flex; gap: .5rem; }
+.exam-manager table { width: 100%; margin-top: 1rem; border-collapse: collapse; }
+.exam-manager th, .exam-manager td { text-align: left; padding: .5rem; border-bottom: 1px solid #465368; }
+.exam-manager [role="alert"] { margin-top: .75rem; color: #ffc0b4; }
+.exam-skeleton { padding: 1rem 0; }
+.exam-skeleton::after {
+  content: "";
+  display: block;
+  margin-top: .6rem;
+  height: 2rem;
+  border-radius: .3rem;
+  background: repeating-linear-gradient(90deg, #30394c 0 26%, #222a3a 26% 29%);
+}

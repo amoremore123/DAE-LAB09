@@ -1,0 +1,31 @@
+import MovieSearch from "../MovieSearch/MovieSearch.jsx";
+export default function Hero({ movie, searchText, onSearchChange }) {
+  return (
+    <section className="hero" id="featured">
+      <div className="hero-copy">
+        <p className="eyebrow">LA HISTORIA DE ESTA SEMANA</p>
+        <h1>
+          Hay historias que
+          <br />
+          merecen una
+          <br />
+          <em>pantalla grande.</em>
+        </h1>
+        <p className="hero-description">{movie.synopsis}</p>
+        <div className="hero-meta">
+          <strong>{movie.title}</strong>
+          <span>{movie.genre}</span>
+          <span>{movie.classification}</span>
+          <span>★ {movie.rating.toFixed(1)}</span>
+        </div>
+        <MovieSearch value={searchText} onChange={onSearchChange} />
+      </div>
+      <div className="hero-art">
+        <img src={movie.image} alt={`Ilustración de ${movie.title}`} />
+        <span className="art-label">
+          ESTRENO DESTACADO <b>01 / 08</b>
+        </span>
+      </div>
+    </section>
+  );
+}

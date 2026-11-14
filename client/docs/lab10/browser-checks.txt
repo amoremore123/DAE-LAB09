@@ -1,0 +1,5 @@
+2026-11-02 Browser checks completed
+- Favorite added, retained after reload, and removed.
+- Query marea returned Marea azul after debounce.
+- Query pelicula inexistente showed empty state.
+- Five input events m, ma, mar, mare, marea; one delayed filter. See debounce-console.txt.

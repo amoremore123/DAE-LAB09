@@ -1,0 +1,5 @@
+PASS: search ignores case, spaces and accents.
+PASS: empty search returns 8 and no match returns 0.
+PASS: favorites toggle without mutating previous state.
+PASS: favorites save/load round-trip.
+PASS: invalid storage, duplicate and unknown ids handled.
