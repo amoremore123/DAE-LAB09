@@ -377,3 +377,15 @@ footer small {
     width: 100%;
   }
 }
+
+.premieres-section { border-top: 1px solid var(--line); padding: 40px 0; }
+.premieres-section h2 { font-size: clamp(1.45rem, 3vw, 2rem); letter-spacing: -.025em; }
+.premiere-carousel, .premiere-error, .premiere-skeleton { border-radius: 10px; background: #eeeee8; padding: 20px; margin-bottom: 12px; }
+.premiere-carousel { display: grid; grid-template-columns: minmax(80px, 130px) 1fr; gap: clamp(12px, 3vw, 24px); align-items: center; }
+.premiere-carousel img { border-radius: 6px; width: 100%; }
+.premiere-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.premiere-skeleton { min-height: 160px; animation: premiere-pulse 1s ease-in-out infinite alternate; }
+@keyframes premiere-pulse { to { opacity: .45; } }
+@media(prefers-reduced-motion: reduce) { .premiere-skeleton { animation: none; } }
+.search-controls { flex-wrap: wrap; }
+.search-controls input { flex-basis: 170px; }

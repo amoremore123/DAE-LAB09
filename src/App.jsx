@@ -9,12 +9,14 @@ import {
   saveFavorites,
   toggleFavoriteId,
 } from "./utils/favorites.js";
-import { useDebouncedValue } from "./hooks/useDebouncedValue.js";
+import { useDebounce } from "./hooks/useDebounce.js";
+import PremieresSection from "./components/PremieresSection/PremieresSection.jsx";
+import { Toaster, toast } from "sonner";
 import "./styles/index.css";
 
 export default function App() {
   const [searchText, setSearchText] = useState("");
-  const debouncedSearch = useDebouncedValue(searchText, 400);
+  const debouncedSearch = useDebounce(searchText, 400);
   const [favorites, setFavorites] = useState(() => {
     try {
       return loadFavorites(
@@ -32,12 +34,17 @@ export default function App() {
       /* Storage is optional. */
     }
   }, [favorites]);
+  const favoritesCount = favorites.length;
   function toggleFavorite(id) {
+    const movie = movies.find((item) => item.id === id);
+    if (!movie) return;
+    toast(favorites.includes(id) ? `Quitaste ${movie.title} de favoritas` : `Guardaste ${movie.title} en favoritas`);
     setFavorites((current) => toggleFavoriteId(current, id));
   }
   return (
     <>
-      <Header favoritesCount={favorites.length} />
+      <Toaster position="top-center" />
+      <Header favoritesCount={favoritesCount} />
       <main id="home">
         <Hero
           movie={movies[0]}
@@ -46,10 +53,11 @@ export default function App() {
         />
         <MovieList
           movies={movies}
-          searchText={debouncedSearch}
+          searchText={searchText === "" ? "" : debouncedSearch}
           favorites={favorites}
           onToggleFavorite={toggleFavorite}
         />
+        <PremieresSection />
       </main>
       <Footer />
     </>

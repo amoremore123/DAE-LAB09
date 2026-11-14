@@ -1,4 +1,6 @@
-export const movies = [
+import { adaptMovie } from "../utils/adaptMovie.js";
+
+const catalog = [
   {
     id: 1,
     title: "Órbita",
@@ -84,3 +86,5 @@ export const movies = [
     showtimes: ["15:00", "18:30", "21:00"],
   },
 ];
+
+export const movies = catalog.map(adaptMovie);

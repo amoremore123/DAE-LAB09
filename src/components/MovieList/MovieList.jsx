@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import { useWindowSize } from "../../hooks/useWindowSize.js";
 import { filterMovies } from "../../utils/search.js";
 import MovieCard from "../MovieCard/MovieCard.jsx";
 
@@ -8,6 +9,8 @@ export default function MovieList({
   searchText = "",
   onToggleFavorite,
 }) {
+  const { width } = useWindowSize();
+  const columns = width >= 1024 ? 4 : width >= 540 ? 2 : 1;
   const filteredMovies = useMemo(() => filterMovies(movies, searchText), [movies, searchText]);
   return (
     <section className="movies-section" id="movies">
@@ -29,7 +32,7 @@ export default function MovieList({
           </p>
         </div>
       ) : (
-        <div className="movie-grid">
+        <div className="movie-grid" style={{ gridTemplateColumns: `repeat(${columns}, minmax(0, 1fr))` }}>
           {filteredMovies.map((movie) => (
             <MovieCard
               key={movie.id}

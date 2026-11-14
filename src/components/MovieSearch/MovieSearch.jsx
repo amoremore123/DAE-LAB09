@@ -22,6 +22,7 @@ export default function MovieSearch({ value, onChange }) {
           }}
         />
         <Button type="submit">Ver cartelera ↗</Button>
+        {value && <Button variant="secondary" onClick={() => onChange("")}>Limpiar filtro</Button>}
       </div>
       <p className="search-hint">
         Encuentra tu próxima historia por su título.
