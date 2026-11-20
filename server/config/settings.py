@@ -36,6 +36,7 @@ INSTALLED_APPS = [
     'corsheaders',
     'rest_framework',
     'quiz',
+    'catalog',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -150,7 +151,7 @@ REST_FRAMEWORK = {
 # Local React development origin. An empty value disables cross-origin access.
 CORS_ALLOWED_ORIGINS = [
     origin.strip()
-    for origin in os.environ.get("DJANGO_CORS_ORIGINS", "http://127.0.0.1:5173").split(",")
+    for origin in os.environ.get("DJANGO_CORS_ORIGINS", "http://127.0.0.1:5173,http://localhost:5173").split(",")
     if origin.strip()
 ]
 CORS_URLS_REGEX = r"^/api/"
