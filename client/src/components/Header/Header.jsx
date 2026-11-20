@@ -1,18 +1,18 @@
-export default function Header({ favoritesCount = 0 }) {
+import { NavLink } from "react-router-dom";
+
+export default function Header() {
   return (
     <header className="header">
-      <a className="brand" href="#home">
-        <span className="brand-mark">a</span>cine aura
+      <NavLink className="brand" to="/">
+        <span className="brand-mark">a</span>tienda aura
         <span className="brand-dot">.</span>
-      </a>
+      </NavLink>
       <nav aria-label="Navegación principal">
-        <a href="#movies">Cartelera</a>
-        <a href="#featured">Destacada</a>
-        <a href="#contact">Contacto</a>
+        <NavLink to="/" end>Catálogo</NavLink>
+        <NavLink to="/products/new">Nuevo producto</NavLink>
+        <NavLink to="/cartelera">Cartelera</NavLink>
       </nav>
-      <span className="location" aria-live="polite">
-        ♥ {favoritesCount} favoritas · Lima, Perú
-      </span>
+      <span className="location">Lima, Perú</span>
     </header>
   );
 }

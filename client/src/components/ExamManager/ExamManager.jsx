@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
-import { createExam, deleteExam, describeError, listExams } from "../../api/exams.js";
+import { createExam, deleteExam, listExams } from "../../services/examService.js";
+import { describeError } from "../../services/apiClient.js";
 import "./ExamManager.css";
 
 export default function ExamManager() {
